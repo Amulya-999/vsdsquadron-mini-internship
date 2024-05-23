@@ -30,4 +30,9 @@
 #### sum1ton.c is the input file
 #### then it generates a file sum1ton.c
 
+![1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/fbaa359a-49a4-474c-a2a4-40792fce564e)
+
+#### next step is to open a new tab terminal and see the assembly code for c code and command to see the assembly code of c code is
+#### 'riscv64-unknown-elf-objdump -d sum1ton.o'
+
 
