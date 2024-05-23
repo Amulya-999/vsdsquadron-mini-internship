@@ -21,7 +21,7 @@
 #### 1.we use the command 'cat sum1ton.c' to view the code on the terminal
 #### 2.To compile the code we use the command 'riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c'
 #### -Here, -mabi=lp64 flag in the RISC-V compiler command specifies the ABI (Application Binary Interface) and the data model for our compiled program
-#### -'-mabi': This flag specifies the ABI to use , 'lp64': This part defines the data model used for the ABI.
+#### -  '-mabi': This flag specifies the ABI to use , 'lp64': This part defines the data model used for the ABI.
 #### RISC-V supports different ABIs depending on the specific requirements of our application.so,'lp64'denotes the long integer pointer that is it signifies that pointers are 64 bit wide.
 #### -o is the currently using optimization level.
 #### sum1ton.o is the output file and sum1ton.c is the input file.
@@ -30,7 +30,7 @@
 ![1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/fbaa359a-49a4-474c-a2a4-40792fce564e)
 
 #### 3.Open a new tab terminal and see the assembly code for c code,command to see the assembly code of c code iS 'riscv64-unknown-elf-objdump -d sum1ton.o'
-#### -'objdump': This is the specific command within the toolchain used to disassemble object files.
+#### -  'objdump': This is the specific command within the toolchain used to disassemble object files.
 #### 4.This gives bunch of assembly codes,to reduce the code we use the command 'riscv64-unknown-elf-objdump -d sum1ton.o '| less'
 
 ![2](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/732c1d66-59d5-4199-aca3-331e1ea4e693)
@@ -52,5 +52,6 @@
 
 ![6](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/61ad25f5-3adf-46ad-a38c-d92e87015519)
 
-#### -As the task is simple, The no.of instructions didnot change because for simple tasks,the optimization applied at -o1 may already be sufficient to achieve the most efficient code.higher level of optimization (-ofast) might not find additional way to reduce the instruction count and also instruction count can vary from one machine to other machine based on several factors like different machines may have different microarchitectures and small differences in compilers implementation can affect the change in instruction count.
-#### -For complex tasks,instruction count changes in different optimization levels like -o1 and -ofast.
+#### - As the task is simple, The no.of instructions didnot change because for simple tasks,the optimization applied at -o1 may already be sufficient to achieve the most efficient code.higher level of optimization (-ofast) might not find additional way to reduce the instruction count and also instruction count can vary from one machine to other machine based on several factors like different machines may have different microarchitectures and small differences in compilers implementation can affect the change in instruction count.
+#### - For complex tasks,instruction count reduces in -ofast level of optimization
+
