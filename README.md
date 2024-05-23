@@ -25,5 +25,9 @@
 #### '-mabi': This flag specifies the ABI to use.
 #### 'lp64': This part defines the data model used for the ABI.
 #### RISC-V supports different ABIs depending on the specific requirements of our application.so,'lp64'denotes the long integer pointer that is it signifies that pointers are 64 bit wide.
+#### -o is the currently using option
+#### sum1ton.o is the output file
+#### sum1ton.c is the input file
 #### then it generates a file sum1ton.c
+
 
