@@ -35,4 +35,8 @@
 #### 'objdump': This is the specific command within the toolchain used to disassemble object files
 #### this gives bunch of assembly codes,to reduce the code we use the command 'riscv64-unknown-elf-objdump -d sum1ton.o | less'
 
+![2](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/732c1d66-59d5-4199-aca3-331e1ea4e693)
+
+we get a huge section of code but we are interested in main section of the code so type '/main'
+
 
