@@ -5,7 +5,7 @@
 
 
 ## C LANGUAGE BASED LAB
-#### After installing the RISC-V toolchain , the task was to compile a C program which calculates the sum of numbers from 1 to n using GCC Compiler.
+#### After installing the RISC-V toolchain , the task is to compile a C program which calculates the sum of numbers from 1 to n using GCC Compiler.
 #### The command 'leafpad sum1ton.c &' is used to open a text editor called Leafpad with the file name sum1ton.c for editing in which the c program to find the sum of numbers from 1 to n is written.
 #### The command 'gcc sum1ton.c' is used to compile the C program which is in file sum1ton.c , into an executable program
 #### The command './a.out' is used to execute the compiled program.
