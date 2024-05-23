@@ -39,4 +39,6 @@
 
 we get a huge section of code but we are interested in main section of the code so type '/main'
 
+![3](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/7b016ed8-493a-4247-b1bc-6d70b9fc9541)
 
+#### now,press n we get the main section with its address with 35 instructions
