@@ -18,9 +18,8 @@
 
 ## RISC-V BASED LAB
 #### now,the task is to compile the same C program using RISC-V simulator
-#### we use the command 'cat sum1ton.c' to view the code on the terminal
-#### to compile the code we use the command 
-#### 'riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c'
+#### 1.we use the command 'cat sum1ton.c' to view the code on the terminal
+#### 2.To compile the code we use the command 'riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c'
 #### here, -mabi=lp64 flag in the RISC-V compiler command specifies the ABI (Application Binary Interface) and the data model for our compiled program
 #### '-mabi': This flag specifies the ABI to use.
 #### 'lp64': This part defines the data model used for the ABI.
@@ -32,7 +31,8 @@
 
 ![1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/fbaa359a-49a4-474c-a2a4-40792fce564e)
 
-#### next step is to open a new tab terminal and see the assembly code for c code and command to see the assembly code of c code is
-#### 'riscv64-unknown-elf-objdump -d sum1ton.o'
+#### next step is to open a new tab terminal and see the assembly code for c code and command to see the assembly code of c code iS 'riscv64-unknown-elf-objdump -d sum1ton.o'
+#### 'objdump': This is the specific command within the toolchain used to disassemble object files
+#### this gives bunch of assembly codes,to reduce the code we use the command 'riscv64-unknown-elf-objdump -d sum1ton.o | less'
 
 
