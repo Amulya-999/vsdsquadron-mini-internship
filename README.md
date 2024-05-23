@@ -46,4 +46,8 @@ we get a huge section of code but we are interested in main section of the code 
 ![4](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/f41828e6-cebf-4651-b5c4-ea3ad1b18fd2)
 
 #### so we see that there are 35 instructions in main section
-#### now we repeat the same from the starting by using option ofast
+#### now we repeat the same from the starting by using option ofast in the command as shown in below picture
+
+![5](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/46bf9785-68c7-462f-b8fb-3e734918c72c)
+
+#### here also we get 35 instructions
