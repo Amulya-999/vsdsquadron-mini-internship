@@ -10,3 +10,6 @@
 #### The command 'gcc sum1ton.c' is used to compile the above c program which is in sum1ton.c file into an executable program
 #### The command './a.out' is used to execute the compiled program.
 #### as  the code is written to find the sum of numbers from 1 to 5,by following the above commands this code is compiled and output is produced as 15.
+
+
+![VirtualBox_vsdworkshop_23_05_2024_17_44_22](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/deb28ef8-428b-4f8a-8ae4-c5b42a1e821d)
