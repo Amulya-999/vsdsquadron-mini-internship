@@ -20,8 +20,8 @@
 #### Now,the task is to compile the same C program using RISC-V simulator
 #### 1. we use the command 'cat sum1ton.c' to view the code on the terminal
 #### 2. To compile the code we use the command 'riscv64-unknown-elf-gcc -o1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c'
-#### -Here, -mabi=lp64 flag in the RISC-V compiler command specifies the ABI (Application Binary Interface) and the data model for our compiled program
-#### -  '-mabi': This flag specifies the ABI to use , 'lp64': This part defines the data model used for the ABI.
+#### Here, -mabi=lp64 flag in the RISC-V compiler command specifies the ABI (Application Binary Interface) and the data model for our compiled program
+####  '-mabi': This flag specifies the ABI to use , 'lp64': This part defines the data model used for the ABI.
 #### RISC-V supports different ABIs depending on the specific requirements of our application.so,'lp64'denotes the long integer pointer that is it signifies that pointers are 64 bit wide.
 #### -o is the currently using optimization level.
 #### sum1ton.o is the output file and sum1ton.c is the input file.
