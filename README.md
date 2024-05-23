@@ -5,4 +5,4 @@
 
 
 ## C LANGUAGE BASED LAB
-###### here,the task was to compile the c program which gives the output of sum of numbers from 1 to n.let us consider n as 5.
+#### here,the task was to compile the c program which gives the output of sum of numbers from 1 to n.let us consider n as 5.
