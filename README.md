@@ -161,13 +161,22 @@ examples : <br>
 #### S-TYPE INSTRUCTION
 
 1 . S-TYPE is store type instruction used for memory store operations.<br>
-2 . These instructions are responsible for storing data from a register into memory. <br>
+2 . These instructions are responsible for storing data from a register into memory.<br>
+3 . The "s" type instruction is one of the basic instruction formats used for performing arithmetic or logical operations that involve a register and an immediate value, where the immediate value is 12 bits long. This instruction format is primarily used for instructions that store a value into memory, hence the "s" designation, which stands for "store."
 
-#### FORMAT OF S-TYPE INSTRUCTION
+#### FORMAT OF S-TYPE INSTRUCTION 
 
-  31       25 24    20 19    15 14    12 11    7 6       0
-+-----------+--------+--------+--------+--------+---------+
-|  imm[11:5]|   rs2  |   rs1  |  funct3|  imm[4:0]|  opcode |
-+-----------+--------+--------+--------+--------+---------+
+| 31  | 30 29 28 27 26 25 | 24 23 22 21 20 | 19 18 17 16 15 | 14 13 12 | 11 10  9  8  7 |  6  5  4  3  2  1  0 |
+| imm[11:5]               | rs2            | rs1            | funct3   | imm[4:0]       | opcode              |
 
-1 . 
+1 . Opcode (7 bits): This field specifies the operation to be performed. Different opcodes correspond to different operations such as arithmetic, logical, or memory-related operations.
+
+2 . Immediate (5 bits): This field holds a 5-bit immediate value. In the "s" type instruction, this immediate value is used to specify an offset that is added to the base address stored in one of the registers to calculate the memory address where the data will be stored.
+
+3 . Source Register (5 bits): This field specifies the source register containing the data to be stored in memory. The contents of this register are used as the value to be stored.
+
+4 . Destination Register (5 bits): This field specifies the destination register. However, in "s" type instructions, this field is not used for storing the result of the operation. Instead, it holds the base address that is used in conjunction with the immediate value to calculate the memory address where the data will be stored.
+
+5 . Funct3 (3 bits): This field, along with the opcode, further specifies the exact operation to be performed. For "s" type instructions, the funct3 field typically indicates the size and type of memory operation (e.g., byte, half-word, word) to be performed.
+
+6 . Funct7 (7 bits): This field is not used in "s" type instructions.
