@@ -90,23 +90,46 @@ Types of 32 bit instructions in RISC-V is
   
 ![INSTRUCTION SET](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/999f2eca-827b-47d8-885f-7e85e84e87c7)
 
-#### * R-TYPE INSTRUCTION
+#### R-TYPE INSTRUCTION
 1 . R-TYPE is Register type instructions.<br>
 2 . They are fundamental for performing operations such as addition,subtraction,bitwise operations and shifts.<br>
  #### FORMAT OF R-TYPE INSTRUCTIONS
 
 | funct7 (7 bits) | rs2 (5 bits) | rs1 (5 bits) | funct3 (3 bits) | rd (5 bits) | opcode (7 bits) |
 
-1 . opcode (7 bits): Specifies the operation type and indicates that this is an R-type instruction. For R-type instructions, the opcode is typically 0110011.
+1 . opcode (7 bits):This field is of 7bits.it Specifies the operation type and indicates that this is an R-type instruction. For R-type instructions, the opcode is typically 0110011.
 
-2 . rd (5 bits): The destination register. It specifies which register will receive the result of the operation.
+2 . rd (5 bits): This field is of 5 bits.The destination register. It specifies which register will receive the result of the operation.
 
-3 . funct3 (3 bits): Further specifies the operation to be performed. It differentiates between different operations that share the same opcode.
+3 . funct3 (3 bits): This field is of 3 bits.it Further specifies the operation to be performed. It differentiates between different operations that share the same opcode.
 
-4 . rs1 (5 bits): The first source register. It specifies the register containing the first operand.
+4 . rs1 (5 bits): This field is of 5 bits.It is the first source register. It specifies the register containing the first operand.
 
-5 . rs2 (5 bits): The second source register. It specifies the register containing the second operand.
+5 . rs2 (5 bits): This field is of 5 bits.It is the second source register. It specifies the register containing the second operand.
 
-6 . funct7 (7 bits): Provides additional opcode extension for more fine-grained operation control. It helps to distinguish between different operations that share the same opcode and funct3 values.
+6 . funct7 (7 bits): This field is of 7 bits.It Provides additional opcode extension for more fine-grained operation control. It helps to distinguish between different operations that share the same opcode and funct3 values.
+7 . Other Common R-Type Instructions
+* SUB (Subtract) : 
+funct7: 0100000
+funct3: 000
+Example: SUB x10, x1, x2
+* AND (Bitwise AND) :
+funct7: 0000000
+funct3: 111
+Example: AND x10, x1, x2
+* OR (Bitwise OR) :
+funct7: 0000000
+funct3: 110
+Example: OR x10, x1, x2
+* SLL (Shift Left Logical) :
+funct7: 0000000
+funct3: 001
+Example: SLL x10, x1, x2
+* SLT (Set Less Than) :
+funct7: 0000000
+funct3: 010
+Example: SLT x10, x1, x2
 
- 
+ #### I-TYPE INSTRUCTION
+ 1 . I-TYPE is immediate type instruction format in 32 bit RISC-V ISA.<br>
+ 2 . It is used for operations that involve an immediate value,which is a constant encoded dire
