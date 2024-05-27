@@ -88,5 +88,25 @@ Types of 32 bit instructions in RISC-V is
 * U-TYPE
 * J-TYPE
   
+![INSTRUCTION SET](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/999f2eca-827b-47d8-885f-7e85e84e87c7)
 
+#### * R-TYPE INSTRUCTION
+1 . R-TYPE is Register type instructions.<br>
+2 . They are fundamental for performing operations such as addition,subtraction,bitwise operations and shifts.<br>
+ #### FORMAT OF R-TYPE INSTRUCTIONS
 
+| funct7 (7 bits) | rs2 (5 bits) | rs1 (5 bits) | funct3 (3 bits) | rd (5 bits) | opcode (7 bits) |
+
+1 . opcode (7 bits): Specifies the operation type and indicates that this is an R-type instruction. For R-type instructions, the opcode is typically 0110011.
+
+2 . rd (5 bits): The destination register. It specifies which register will receive the result of the operation.
+
+3 . funct3 (3 bits): Further specifies the operation to be performed. It differentiates between different operations that share the same opcode.
+
+4 . rs1 (5 bits): The first source register. It specifies the register containing the first operand.
+
+5 . rs2 (5 bits): The second source register. It specifies the register containing the second operand.
+
+6 . funct7 (7 bits): Provides additional opcode extension for more fine-grained operation control. It helps to distinguish between different operations that share the same opcode and funct3 values.
+
+ 
