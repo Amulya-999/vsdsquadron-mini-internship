@@ -170,10 +170,76 @@ examples : <br>
 | 31  | 30 29 28 27 26 25 | 24 23 22 21 20 | 19 18 17 16 15 | 14 13 12 | 11 10  9  8  7 |  6  5  4  3  2  1  0 |
 | imm[11:5]               | rs2            | rs1            | funct3   | imm[4:0]       | opcode              |
 
-1 . Opcode (7 bits): This field specifies the operation to be performed. Different opcodes correspond to different operations such as arithmetic, logical, or memory-related operations.
+1 . Opcode (7 bits) [0-6]: This field specifies the operation to be performed. For S-type instructions, the opcode typically indicates a store operation, such as sw (store word), sh (store halfword), or sb (store byte).<br>
+2 . Immediate (I) (7 bits) [7-11, 25-31]: The immediate field is split into two parts in the instruction encoding. The lower 5 bits (imm[4:0]) occupy bits 7-11, and the upper 7 bits (imm[11:5]) occupy bits 25-31. These parts are combined to form a 12-bit immediate value, which is sign-extended to create the full immediate value used in the address calculation for the store operation.<br>
+3 . rs1 (5 bits) [15-19]: This field specifies the source register 1, which contains the base address for the memory operation. It is used along with the immediate value to calculate the effective address where the data will be stored.<br>
+4 . rs2 (5 bits) [20-24]: This field specifies the source register 2, which contains the data to be stored in memory.<br>
+5 . funct3 (3 bits) [12-14]: This field specifies the function or the specific variant of the store instruction. It distinguishes between different types of store instructions, such as sw (store word), sh (store halfword), and sb (store byte).<br>
+Example : Here's how an sw instruction is encoded and how each field is used:<br>
+Opcode: For sw, the opcode is 0100011 (binary).<br>
+funct3: For sw, the funct3 is 010 (binary).<br>
+rs1: This would be the register containing the base address (e.g., x1 might be represented as 00001 in binary).<br>
+rs2: This would be the register containing the data to be stored (e.g., x2 might be represented as 00010 in binary).<br>
+Immediate: The immediate value is split into two parts:<br>
+imm[11:5] (upper bits)<br>
+imm[4:0] (lower bits)<br>
 
-2 . Immediate (5 bits): This field holds a 5-bit immediate value. In the "s" type instruction, this immediate value is used to specify an offset that is added to the base address stored in one of the registers to calculate the memory address where the data will be stored.
+#### B-TYPE INSTRUCTION
 
-3 . Source Register (5 bits): This field specifies the source register containing the data to be stored in memory. The contents of this register are used as the value to be stored.
+1. B-TYPE is a branch type instruction used for conditional branch operations.<br>
+2. These instructions allow the program to jump to a different part of the code based on the evaluation of a condition.<br>
+ #### FORMAT OF B-TYPE INSTRUCTION
 
-4 . Destination R
+ 31    30 25 24   20 19   15 14  12 11    8 7     6 5 0
+| imm[12] | imm[10:5] | rs2 | rs1 | funct3 | imm[4:1] | imm[11] | opcode |
+
+1 . Opcode (7 bits) [0-6]: This field specifies the type of operation to be performed. For B-type instructions, the opcode typically indicates a branch operation. For example, common opcodes include 1100011 for branch instructions.<br>
+2 . Immediate (I) (12 bits) [7, 8-11, 25-30, 31]: The immediate field is split into multiple parts in the instruction encoding. These parts are combined to form a 13-bit immediate value, which is sign-extended to create the full offset used for the branch target address. The parts are as follows:<br>
+imm[11] (bit 7)<br>
+imm[4:1] (bits 8-11)<br>
+imm[10:5] (bits 25-30)<br>
+imm[12] (bit 31)<br>
+3 . rs1 (5 bits) [15-19]: This field specifies the source register 1, which contains one of the operands for the comparison.<br>
+4 . rs2 (5 bits) [20-24]: This field specifies the source register 2, which contains the other operand for the comparison.<br>
+5 . funct3 (3 bits) [12-14]: This field specifies the specific branch condition (e.g., equal, not equal, less than, etc.). It determines the type of comparison to be made between the values in rs1 and rs2.<br>
+example: Branch if Equal (beq)<br>
+ Here’s how a beq instruction is encoded and how each field is used:<br>
+Opcode: For beq, the opcode is 1100011 (binary).<br>
+funct3: For beq, the funct3 is 000 (binary).<br>
+rs1: This would be the register containing the first operand (e.g., x1 might be represented as 00001 in binary).<br>
+rs2: This would be the register containing the second operand (e.g., x2 might be represented as 00010 in binary).<br>
+Immediate: The immediate value specifies the offset for the branch target address. It is split into multiple parts:<br>
+imm[12]
+imm[10:5]
+imm[4:1]
+imm[11]<br>
+
+
+#### U-TYPE INSTRUCTION
+ 1. U-TYPE instruction is upper intermediate instruction used for operations that involve a 20-bit immediate value, typically to load this immediate value into the upper 20 bits of a register. <br>
+ 
+  #### FORMAT OF U-TYPE INSTRUCTION
+  31          12 11    7 6       0
+|   imm[31:12]   |  rd   | opcode  |
+
+1. Immediate (imm) (20 bits) [12-31]: This field contains the 20-bit immediate value that is typically used to set the upper 20 bits of a register. The immediate value is left-shifted by 12 bits to align it with the upper part of the register.<br>
+2 . rd (5 bits) [7-11]: This field specifies the destination register where the result will be stored.<br>
+3 . Opcode (7 bits) [0-6]: This field specifies the type of operation to be performed. For U-type instructions, common opcodes include LUI (Load Upper Immediate) and AUIPC (Add Upper Immediate to PC).<br>
+ example : <br>
+ -LUI (Load Upper Immediate): Loads the 20-bit immediate value into the upper 20 bits of the destination register, with the lower 12 bits set to zero.<br>
+Opcode: 0110111 (binary).<br>
+-AUIPC (Add Upper Immediate to PC): Adds the 20-bit immediate value (shifted left by 12 bits) to the current value of the program counter (PC) and stores the result in the destination register.<br>
+Opcode: 0010111 (binary).<br>
+
+#### J-TYPE INSTRUCTION
+
+1 . J-TYPE instruction is jump instruction  used for unconditional jumps to a target address within a large range.<br>
+2 . .<br.
+
+#### FORMAT OF J-TYPE INSTRUCTION
+
+  31       30       20       19      12       11      1       0
+|  imm[20] | imm[10:1] | imm[11] | imm[19:12] |   rd  | opcode  |
+  31       30       21       20      12       11      7       6
+
+1 . 
