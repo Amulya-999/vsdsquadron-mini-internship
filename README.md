@@ -137,10 +137,9 @@ Example: SLT x10, x1, x2<br>
 
  #### FORMAT OF I-TYPE INSTRUCTION
 
-   31       25 24    20 19    15 14    12 11    7 6       0
-+-----------+--------+--------+--------+--------+---------+
-|  immediate|   rs1  |  funct3|   rd   |  opcode|         |
-+-----------+--------+--------+--------+--------+---------+
+   31       25 24    20 19    15 14    12 11    7 6       0<br>
+|  immediate|   rs1  |  funct3|   rd   |  opcode|         | <br>
+
 
 1 . Opcode (6 bits): The opcode field specifies the operation to be performed by the instruction. It indicates the type of instruction, such as arithmetic, logical, or memory-related operation.it is of 6 bits.<br>
 
@@ -190,7 +189,7 @@ imm[4:0] (lower bits)<br>
 2. These instructions allow the program to jump to a different part of the code based on the evaluation of a condition.<br>
  #### FORMAT OF B-TYPE INSTRUCTION
 
- 31    30 25 24   20 19   15 14  12 11    8 7     6 5 0
+ 31    30 25 24   20 19   15 14  12 11    8 7     6 5 0 <br>
 | imm[12] | imm[10:5] | rs2 | rs1 | funct3 | imm[4:1] | imm[11] | opcode |
 
 1 . Opcode (7 bits) [0-6]: This field specifies the type of operation to be performed. For B-type instructions, the opcode typically indicates a branch operation. For example, common opcodes include 1100011 for branch instructions.<br>
@@ -219,7 +218,7 @@ imm[11]<br>
  1. U-TYPE instruction is upper intermediate instruction used for operations that involve a 20-bit immediate value, typically to load this immediate value into the upper 20 bits of a register. <br>
  
   #### FORMAT OF U-TYPE INSTRUCTION
-  31          12 11    7 6       0
+  31          12 11    7 6       0 <br>
 |   imm[31:12]   |  rd   | opcode  |
 
 1. Immediate (imm) (20 bits) [12-31]: This field contains the 20-bit immediate value that is typically used to set the upper 20 bits of a register. The immediate value is left-shifted by 12 bits to align it with the upper part of the register.<br>
@@ -233,13 +232,49 @@ Opcode: 0010111 (binary).<br>
 
 #### J-TYPE INSTRUCTION
 
-1 . J-TYPE instruction is jump instruction  used for unconditional jumps to a target address within a large range.<br>
-2 . .<br.
+1 . The J-type (Jump) instruction format is used for jump operations that involve a large immediate value, typically for implementing control flow instructions like unconditional jumps.<br>
+2 . The primary instruction that uses the J-type format is JAL (Jump And Link).
 
 #### FORMAT OF J-TYPE INSTRUCTION
 
-  31       30       20       19      12       11      1       0
-|  imm[20] | imm[10:1] | imm[11] | imm[19:12] |   rd  | opcode  |
+  31       30       20       19      12       11      1       0<br>
+|  imm[20] | imm[10:1] | imm[11] | imm[19:12] |   rd  | opcode  |<br>
   31       30       21       20      12       11      7       6
 
-1 . 
+1 . opcode (7 bits):  This field specifies the operation code. For the JAL instruction, the opcode is 1101111 (binary) or 0x6F (hex).<br>
+2 . rd (5 bits): This field specifies the destination register where the return address will be stored. This is usually the register x1 (the link register).<br>
+3 . imm[20] (1 bit): This is the most significant bit of the immediate value.<br>
+4 . imm[10:1] (10 bits): These bits are part of the immediate value.<br>
+5 . imm[11] (1 bit): This bit is part of the immediate value.<br>
+6 . imm[19:12] (8 bits): These bits are part of the immediate value.<br>
+
+#### let us write 32bit opcode for few instruction tyep formats....
+ ##### 1. ADD r6,r2,r1
+ - it is a r-type instruction as it involves arithmetic operation add.<br>
+funct7 = 0000000<br>
+rs2 = 00001<br>
+rs1 = 00010<br>
+funct3 = 000<br>
+rd = 00110<br>
+opcode = 0110011<br>
+32 bit instruction code is 0000000 00001 00010 000 00110 0110011<br>
+
+##### 2. SUB r7,r1,r2
+- it is a r-type instruction as it involves arithmetic operation sub.<br>
+funct7 = 0100000<br>
+rs2  = 00010<br>
+rs1 = 00001<br>
+funct3 = 000<br>
+rd  = 00111<br>
+opcode= 0110011<br>
+32 bit instruction code is 0100000 00010 00001 000 00111 0110011<br>
+
+  #### 3. AND r8,r1,r3
+  -it is a r-type instruction as it involves logical operation AND.<br>
+  funct7: 0000000(7 bits)<br>
+rs2: 00011(5 bits) <br>
+rs1: 00001 (5 bits)<br>
+funct3: 111 (3 bits)<br>
+rd: 01000 (5 bits)<br>
+opcode: 0110011 (7 bits)<br>
+32 bit instruction code is 0000000 00011 00001 111 01000 01000<br>
