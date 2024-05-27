@@ -60,8 +60,11 @@
 
 ### Task is to identify various RISC-V instruction type and exact 32-bit instruction code in instruction type format for few RISC-V instructions
 
-#### WHAT IS RISC-V
+#### WHAT IS RISC-V ?
 
 ![RISCV](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/edbd60ad-1bf8-4b08-9a05-68414ff0a26e)
 
-1 . RISC-V stands for reduced instruction set computing fifth generation  2 . it is a open source instruction set
+1 . RISC-V stands for reduced instruction set computing fifth generation.<br>
+2 . It is a open source instruction set architecture used to develop custom processors for variety of applications.<br>
+3 . The customization of RISC-V allows chip designers to create processors for specific tasks like low-power applications or high performance computing instead of one-size-fits-all approach.<br>
+4 . RISC-V has steamlined instruction set making it easier to learn,develop and more efficient in terms of power consumption and performance.<br>
