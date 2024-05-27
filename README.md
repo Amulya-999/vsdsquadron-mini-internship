@@ -55,3 +55,13 @@
 #### - As the task is simple, The no.of instructions didnot change because for simple tasks,the optimization applied at -o1 may already be sufficient to achieve the most efficient code.higher level of optimization (-ofast) might not find additional way to reduce the instruction count and also instruction count can vary from one machine to other machine based on several factors like different machines may have different microarchitectures and small differences in compilers implementation can affect the change in instruction count.
 #### - For complex tasks,instruction count reduces in -ofast level of optimization
 
+
+## TASK -2 
+
+### Task is to identify various RISC-V instruction type and exact 32-bit instruction code in instruction type format for few RISC-V instructions
+
+#### WHAT IS RISC-V
+
+![RISCV](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/edbd60ad-1bf8-4b08-9a05-68414ff0a26e)
+
+1 . RISC-V stands for reduced instruction set computing fifth generation  2 . it is a open source instruction set
