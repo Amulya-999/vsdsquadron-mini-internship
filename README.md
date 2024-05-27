@@ -304,23 +304,52 @@ Opcode for OR = 0110011<br>
 - it is r-type instruction as it involves logical operation.<br>
 Opcode for XOR = 0110011<br>
 rd = r10 = 01010<br>
-rs1 = r1 = 00001
-rs2 = r4 = 00100
-func3 = 100
-func7 = 0000000
-32 bits instruction : 0000000_00100_00001_100_01010_0110011
+rs1 = r1 = 00001<br>
+rs2 = r4 = 00100<br>
+func3 = 100<br>
+func7 = 0000000,br>
+32 bits instruction : 0000000 00100 00001 100 01010 0110011<br>
 
 #### 6. SLT r11, r2, r4
 - it is r-type instruction as it involves logical operations on registers.<br>
 - r1 is the destination register, if r2 is less than r4 it sets to 1 else  if r2 is greater than r4 it sets to 0<br>
-Opcode for SLT = 0110011
-rd = r1 = 01011
-rs1 = r2 = 00010
-rs2 = r4 = 00100
-func3 = 010
-func7 = 0000000
-32 bits instruction : 0000000_00100_00010_010_01011_0110011
+Opcode for SLT = 0110011<br>
+rd = r1 = 01011<br>
+rs1 = r2 = 00010<br>
+rs2 = r4 = 00100,br>
+func3 = 010<br>
+func7 = 0000000<br>
+32 bits instruction : 0000000 00100 00010 010 01011 0110011<br>
 
+#### 7.ADDI r12, r4, 5
+- it is I-type instruction as it states that addition with immediate.<br>
+- r12 is the destination register that will store the value of rs1 addition with the immediate value 5.<br>
+Opcode for ADDI = 0010011<br>
+rd = r12 = 01100<br>
+rs1 = r4 = 00100<br>
+imm[11:0] = 5 = 000000000101<br>
+func3 = 000<br>
+32 bits instruction : 000000000101 00100 000 01100 0010011<br>
 
+#### 8. SW r3, r1, 2
+- it is s-type instruction as sw states store word<br>
+- r3 is the source register. This instruction will store the value located in register r3 at the address obtained by adding the immediate address 2 with the address located in register r1.<br>
+Opcode for SW = 0100011<br>
+rs2 = r3 = 00011<br>
+rs1 = r1 = 00001<br>
+imm[11:0] = 2 = 000000000010<br>
+func3 = 010<br>
+32 bits instruction : 0000000 00011 00001 010 00010 0100011<br>
 
+ #### 9. SRL r16, r14, r2
+ - it is a r-type instruction as it states logucal shift right.<br>
+ -16 is the destination register, in which the value stored in r14 will be written after performing logical right shift based on the number stored in r2.<br>
+Opcode for SRL = 0110011<br>
+rd = r16 = 10000<br>
+rs1 = r14 = 01110<br>
+rs2 = r2 = 00010<br>
+func3 = 101<br>
+func7 = 0000000<br>
+32 bits instruction : 0000000 00010 01110 101 10000 0110011
 
+#### 10. 
