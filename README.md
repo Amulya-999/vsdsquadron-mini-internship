@@ -267,25 +267,60 @@ rs2 = 00001<br>
 rs1 = 00010<br>
 funct3 = 000<br>
 rd = 00110<br>
-opcode = 0110011<br>
+opcode for ADD = 0110011<br>
 32 bit instruction code is 0000000 00001 00010 000 00110 0110011<br>
 
 ##### 2. SUB r7,r1,r2
 - it is a r-type instruction as it involves arithmetic operation sub.<br>
 funct7 = 0100000<br>
-rs2  = 00010<br>
-rs1 = 00001<br>
+rs2 = r2 =  00010<br>
+rs1 = r1 =  00001<br>
 funct3 = 000<br>
-rd  = 00111<br>
-opcode= 0110011<br>
+rd = r7 = 00111<br>
+opcode for SUB = 0110011<br>
 32 bit instruction code is 0100000 00010 00001 000 00111 0110011<br>
 
-  #### 3. AND r8,r1,r3
+#### 3. AND r8,r1,r3
   -it is a r-type instruction as it involves logical operation AND.<br>
-  funct7: 0000000(7 bits)<br>
-rs2: 00011(5 bits) <br>
-rs1: 00001 (5 bits)<br>
-funct3: 111 (3 bits)<br>
-rd: 01000 (5 bits)<br>
-opcode: 0110011 (7 bits)<br>
+funct7: 0000000(7 bits)<br>
+rs2 = r3 = 00011(5 bits) <br>
+rs1 = r1 = 00001 (5 bits)<br>
+funct3 = 111 (3 bits)<br>
+rd = r8 = 01000 (5 bits)<br>
+opcode for AND  = 0110011 (7 bits)<br>
 32 bit instruction code is 0000000 00011 00001 111 01000 01000<br>
+
+#### 4. OR r9,r2,r5
+- it is r-type instruction as it involves logical operation.<br>
+func7 = 0000000<br>
+rs2 = r5 = 00101<br>
+rs1 = r2 = 00010<br>
+func3 = 110<br>
+rd = r9 = 01001<br>
+Opcode for OR = 0110011<br>
+32 bit instruction code is 0000000 00101 00010 110 01001 0110011<br>
+
+#### 5. XOR r10, r1, r4
+- it is r-type instruction as it involves logical operation.<br>
+Opcode for XOR = 0110011<br>
+rd = r10 = 01010<br>
+rs1 = r1 = 00001
+rs2 = r4 = 00100
+func3 = 100
+func7 = 0000000
+32 bits instruction : 0000000_00100_00001_100_01010_0110011
+
+#### 6. SLT r11, r2, r4
+- it is r-type instruction as it involves logical operations on registers.<br>
+- r1 is the destination register, if r2 is less than r4 it sets to 1 else  if r2 is greater than r4 it sets to 0<br>
+Opcode for SLT = 0110011
+rd = r1 = 01011
+rs1 = r2 = 00010
+rs2 = r4 = 00100
+func3 = 010
+func7 = 0000000
+32 bits instruction : 0000000_00100_00010_010_01011_0110011
+
+
+
+
