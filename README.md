@@ -150,6 +150,7 @@ Example: SLT x10, x1, x2<br>
 
 4 . Immediate Value (16 bits): The immediate field contains a constant or immediate value that is used in the operation. This value might be added to a register, compared with a register value, or used as an offset for memory operations.<br>
 
+5 . 
 5 . Sign Extension: Since the immediate field is only 16 bits in length, it needs to be sign-extended to the full width of the register (32 bits) before being used in arithmetic or logical operations. Sign extension ensures that the immediate value is properly interpreted as a signed value.<br>
 
 4 . This format allows for instructions like "add immediate" (addi), "load byte" (lb), "store byte" (sb), and many others where an immediate value is needed for the operation.<br>
@@ -175,8 +176,4 @@ examples : <br>
 
 3 . Source Register (5 bits): This field specifies the source register containing the data to be stored in memory. The contents of this register are used as the value to be stored.
 
-4 . Destination Register (5 bits): This field specifies the destination register. However, in "s" type instructions, this field is not used for storing the result of the operation. Instead, it holds the base address that is used in conjunction with the immediate value to calculate the memory address where the data will be stored.
-
-5 . Funct3 (3 bits): This field, along with the opcode, further specifies the exact operation to be performed. For "s" type instructions, the funct3 field typically indicates the size and type of memory operation (e.g., byte, half-word, word) to be performed.
-
-6 . Funct7 (7 bits): This field is not used in "s" type instructions.
+4 . Destination R
