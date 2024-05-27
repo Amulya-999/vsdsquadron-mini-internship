@@ -109,27 +109,65 @@ Types of 32 bit instructions in RISC-V is
 
 6 . funct7 (7 bits): This field is of 7 bits.It Provides additional opcode extension for more fine-grained operation control. It helps to distinguish between different operations that share the same opcode and funct3 values.
 7 . Other Common R-Type Instructions
-* SUB (Subtract) : 
-funct7: 0100000
-funct3: 000
-Example: SUB x10, x1, x2
-* AND (Bitwise AND) :
-funct7: 0000000
-funct3: 111
-Example: AND x10, x1, x2
-* OR (Bitwise OR) :
-funct7: 0000000
-funct3: 110
-Example: OR x10, x1, x2
-* SLL (Shift Left Logical) :
-funct7: 0000000
-funct3: 001
-Example: SLL x10, x1, x2
-* SLT (Set Less Than) :
-funct7: 0000000
-funct3: 010
-Example: SLT x10, x1, x2
+* SUB (Subtract) : <br>
+funct7: 0100000 <br>
+funct3: 000<br>
+Example: SUB x10, x1, x2<br>
+* AND (Bitwise AND) :<br>
+funct7: 0000000<br>
+funct3: 111<br>
+Example: AND x10, x1, x2<br>
+* OR (Bitwise OR) :<br>
+funct7: 0000000<br>
+funct3: 110<br>
+Example: OR x10, x1, x2<br>
+* SLL (Shift Left Logical) :<br>
+funct7: 0000000<br>
+funct3: 001<br>
+Example: SLL x10, x1, x2<br>
+* SLT (Set Less Than) :<br>
+funct7: 0000000<br>
+funct3: 010<br>
+Example: SLT x10, x1, x2<br>
 
  #### I-TYPE INSTRUCTION
  1 . I-TYPE is immediate type instruction format in 32 bit RISC-V ISA.<br>
- 2 . It is used for operations that involve an immediate value,which is a constant encoded dire
+ 2 . It is used for operations that involve an immediate value,which is a constant encoded directly within the instruction itself.<br>
+ 3 . This immediate value is used in various operations specified by the instruction, such as arithmetic, logical operations, memory accesses, or branching.<br>
+
+ #### FORMAT OF I-TYPE INSTRUCTION
+
+   31       25 24    20 19    15 14    12 11    7 6       0
++-----------+--------+--------+--------+--------+---------+
+|  immediate|   rs1  |  funct3|   rd   |  opcode|         |
++-----------+--------+--------+--------+--------+---------+
+
+1 . Opcode (6 bits): The opcode field specifies the operation to be performed by the instruction. It indicates the type of instruction, such as arithmetic, logical, or memory-related operation.it is of 6 bits.<br>
+
+2 . Source Register (rs) (5 bits): This field identifies the source register from which data will be read for the operation. In some cases, this might be the base register for memory operations.it is of 5 bits.<br>
+
+3 . Destination Register (rt) (5 bits): This field specifies the register where the result of the operation will be stored. For memory-related operations, this might indicate the destination register where the loaded data will be stored.<br>
+
+4 . Immediate Value (16 bits): The immediate field contains a constant or immediate value that is used in the operation. This value might be added to a register, compared with a register value, or used as an offset for memory operations.<br>
+
+5 . Sign Extension: Since the immediate field is only 16 bits in length, it needs to be sign-extended to the full width of the register (32 bits) before being used in arithmetic or logical operations. Sign extension ensures that the immediate value is properly interpreted as a signed value.<br>
+
+4 . This format allows for instructions like "add immediate" (addi), "load byte" (lb), "store byte" (sb), and many others where an immediate value is needed for the operation.<br>
+examples : <br>
+5 . Add Immediate (addi): This instruction adds an immediate value to the value in a register and stores the result in another register.<br>
+6 . Load Byte (lb): This instruction loads a byte from memory into a register, using an immediate offset from a base register.<br>
+7 . Branch on Equal (beq): This instruction compares two registers and branches to a target address if they are equal, using an immediate offset for the branch target.<br>
+
+#### S-TYPE INSTRUCTION
+
+1 . S-TYPE is store type instruction used for memory store operations.<br>
+2 . These instructions are responsible for storing data from a register into memory. <br>
+
+#### FORMAT OF S-TYPE INSTRUCTION
+
+  31       25 24    20 19    15 14    12 11    7 6       0
++-----------+--------+--------+--------+--------+---------+
+|  imm[11:5]|   rs2  |   rs1  |  funct3|  imm[4:0]|  opcode |
++-----------+--------+--------+--------+--------+---------+
+
+1 . 
