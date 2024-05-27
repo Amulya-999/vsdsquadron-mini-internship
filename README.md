@@ -67,4 +67,26 @@
 1 . RISC-V stands for reduced instruction set computing fifth generation.<br>
 2 . It is a open source instruction set architecture used to develop custom processors for variety of applications.<br>
 3 . The customization of RISC-V allows chip designers to create processors for specific tasks like low-power applications or high performance computing instead of one-size-fits-all approach.<br>
-4 . RISC-V has steamlined instruction set making it easier to learn,develop and more efficient in terms of power consumption and performance.<br>
+4 . RISC-V has steamlined instruction set making it easier to learn,develop and more effient in terms of power consumption and performance.<br>
+
+#### INSTRUCTION SET OF RISC-V 
+
+1 . Instruction set in RISC-V or any other computer architecture refers to the collection of instructions that a processor can execute.<br>
+2 . These instructions are the commands that tell the processor what operation to perform such as arithmetic operations,data movement,control flow and other functions.<br>
+3 . RISC-V instruction set focusses on basic operations like loading data into registers , performing arithmetic calculations and storing results.<br>
+4 . This simpler approach can make RISC-V  processor easier to design and potentially more efficient than processors with complex instruction sets.<br>
+5 . RISC-V supports 16 bit(RVC) , 32 bit(RV32I) and 64 bit(RV64I).<br>
+
+#### 32 BIT INSTRUCTION SET OF RISC-V
+
+1 . 32 Bit instruction set of RISC-V includes several types of instructions each serving different purposes.<br>
+Types of 32 bit instructions in RISC-V is
+* R-TYPE
+* I-TYPE
+* S-TYPE
+* B-TYPE
+* U-TYPE
+* J-TYPE
+  
+
+
