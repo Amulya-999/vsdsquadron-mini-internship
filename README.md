@@ -344,12 +344,49 @@ func3 = 010<br>
  #### 9. SRL r16, r14, r2
  - it is a r-type instruction as it states logucal shift right.<br>
  -16 is the destination register, in which the value stored in r14 will be written after performing logical right shift based on the number stored in r2.<br>
-Opcode for SRL = 0110011<br>
-rd = r16 = 10000<br>
-rs1 = r14 = 01110<br>
-rs2 = r2 = 00010<br>
-func3 = 101<br>
 func7 = 0000000<br>
+rs2 = r2 = 00010<br>
+rs1 = r14 = 01110<br>
+func3 = 101<br>
+rd = r16 = 10000<br>
+Opcode for SRL = 0110011<br>
 32 bits instruction : 0000000 00010 01110 101 10000 0110011
 
-#### 10. 
+#### 10. BNE r0,r0,15
+- it is a b-type instruction as BNE stand for "branch if not equal" and and checks whether the contents of registers r0 and r0 are not equal.<br>
+- since r0 is the zero register (which always contains zero), this particular instruction is essentially checking if zero is not equal to zero, which is always false. Thus, the branch will never be taken.<br>
+Opcode: The opcode for all branch instructions is 1100011 (7 bits).<br>
+
+Funct3: The funct3 field for BNE is 001 (3 bits).<br>
+
+rs1 and rs2: Both registers are r0, which is register 0.<br>
+
+Immediate: The immediate value (offset) is 15. The immediate in B-type is split and placed into different parts of the instruction format:<br>
+
+Immediate value 15 in binary: 0000 0000 0000 1111 (12 bits).<br>
+imm[12] (bit 31) = 0<br>
+imm[10:5] (bits 30-25) = 000000<br>
+imm[4:1] (bits 11-8) = 1111<br>
+imm[11] (bit 7) = 0<br>
+32 bit instruction code is = 0 000000 00000 00000 001 1111 0 1100011<br>
+
+#### 11 . LW r13,r1,2
+- it is I-type instruction.<br>
+- the LW (Load Word) instruction is an I-type instruction, which is used to load a 32-bit word from memory into a register.<br>
+imm[11:0] = 2 = 00000000001<br>
+rs1 = r1 = 00001<br>
+funct3 for LW = 010<br>
+rd = r13 = 01101<br>
+opcode for LW = 0000011<br>
+32 bit instruction code is = 000000000010 00001 010 01101 0000011<br>
+
+#### 12. SLL r15,r1,r2
+- it is r-type instruction as it involves logical operation.<br>
+- SLL stands for shift logical left<br>
+funct7 = 0000000<br>
+rs2 = r2 = 00010<br>
+rs1 = r1 = 00001<br>
+funct3 = 001<br>
+rd = r15 = 01111<br>
+opcode = 0110011<br>
+32 bit instruction code is = 0000000 00010 00001 001 01111 0110011
