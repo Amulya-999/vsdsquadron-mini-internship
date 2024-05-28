@@ -259,7 +259,7 @@ Opcode: 0010111 (binary).<br>
 
 6 . imm[19:12] (8 bits): These bits are part of the immediate value.<br>
 
-#### let us write 32bit opcode for few instruction tyep formats....
+#### let us write 32bit opcode for few instruction type formats....
  ##### 1. ADD r6,r2,r1
  - it is a r-type instruction as it involves arithmetic operation add.<br>
 funct7 = 0000000<br>
@@ -382,7 +382,7 @@ opcode for LW = 0000011<br>
 
 #### 12. SLL r15,r1,r2
 - it is r-type instruction as it involves logical operation.<br>
-- SLL stands for shift logical left<br>
+- SLL stands for shift left logical.<br>
 funct7 = 0000000<br>
 rs2 = r2 = 00010<br>
 rs1 = r1 = 00001<br>
