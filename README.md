@@ -390,3 +390,20 @@ funct3 = 001<br>
 rd = r15 = 01111<br>
 opcode = 0110011<br>
 32 bit instruction code is = 0000000 00010 00001 001 01111 0110011
+
+## TASK - 3
+
+#### Task is to perform function simulation on RISC-V core verilog netlist and testbench and observe the output waveforms of few instructions of hardcoded ISA.
+
+The verilog code and testbench of RISC-V is already designed which is taken from the reference github repo provided.<br>
+
+To perform Functional simulation:<br>
+1. create a new directory with any name using the command "mkdir <name>" like mkdir amulya.<br>
+2. create two files amulya_v.v and amulya_tb.v using the command "touch amulya_v.v amulya_tb.v".so,two files are created in directory.<br>
+3. copy and paste the verilog code in amulya_v.v file and testbench in amulya_tb.v file from reference repo.<br>
+4. now,make sure that you are on right directory (cd amulya) and to run and simulate the code use the command.<br>
+   iverilog -o amulya amulya_v.v amulya_tb.v<br>
+   ./amulya<br>
+5. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"
+6. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"
+   
