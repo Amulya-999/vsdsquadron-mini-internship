@@ -400,14 +400,21 @@ The verilog code and testbench of RISC-V is already designed which is taken from
 To perform Functional simulation:<br>
 1. create a new directory with any name using the command "mkdir < name > " like<br>
 2. mkdir amulya.<br>
+
 3. create two files   amulya_v.v  and   amulya_tb.v using the command<br>
+
 4. "touch amulya_v.v amulya_tb.v".  so,two files are created in directory.<br>
+
 5. copy and paste the verilog code in amulya_v.v file and testbench in amulya_tb.v file from reference repo.<br>
+
 6. now,make sure that you are on right directory (cd amulya) and to run and simulate the code use the command.<br>
+
    iverilog -o amulya amulya_v.v amulya_tb.v<br>
    ./amulya<br>
-7. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"
-8. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"
+   
+7. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"<br>
+
+8. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"<br>
    
 ![task 1 pic 1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/877e2487-709f-44f0-a514-fab9147c56b9)
 
@@ -416,7 +423,7 @@ To perform Functional simulation:<br>
     ![task 2](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/6cd3dfbb-46b0-4316-92d5-72eeae3ad3cb)
 
 
-10. as shown in fig , all the instructions in verilog code is hardcoded.
+10. as shown in fig , all the instructions in verilog code is hardcoded.<br>
 
 
 #### what is hardcoded ISA ?
@@ -447,17 +454,49 @@ THE HARDCODED ISA PATTERN FROM REFERENCE REPO IS :<br>
 
 ![add new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/d5486e80-8782-46e1-84b1-dc824f1d77d5)
 
-here in the signals to get the waveform of instruction ADD R6,R2,R1;
-1. clk: Represents the clock signal.
-2. EX_MEM_IR[31:0]: Holds the instruction being executed in the EX stage of the pipeline.
-3. ID_EX_A[31:0]: Contains the value of register r1.
-4. ID_EX_B[31:0]: Contains the value of register r2.
-5. EX_MEM_ALUOUT[31:0]: Represents the result of the ALU operation in the EX stage.
+here in the signals to get the waveform of instruction ADD R6,R2,R1;<br>
 
-EX stage is  where the arithmetic or logic operations specified by the instruction are actually performed.
-similarly for other arithmetic and logical instructions also.
+1. clk: Represents the clock signal.<br>
+
+2. EX_MEM_IR[31:0]: Holds the instruction being executed in the EX stage of the pipeline.<br>
+
+3. ID_EX_A[31:0]: Contains the value of register r1.<br>
+
+4. ID_EX_B[31:0]: Contains the value of register r2.<br>
+
+5. EX_MEM_ALUOUT[31:0]: Represents the result of the ALU operation in the EX stage.<br>
+
+
+EX stage is  where the arithmetic or logic operations specified by the instruction are actually performed.<br>
+
+similarly for other arithmetic and logical instructions also.<br>
 
 #### SUB R7,R1,R2
 
+![sub new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/4bf8c586-d8d6-4837-9de4-089fb3f11b78)
+
+#### AND R8,R1,R3
+
+![and new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/9ae2d285-eb26-4b08-8d88-e90a1294b36b)
+
+#### OR R9,R2,R5 
+
+![or new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/f160a374-d792-4861-90f5-bb4b527092e0)
+
+#### SLT R1,R2,R4
+
+![slt new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/7e7eb0bf-c4c2-488a-a7b6-8a27f02ecdaf)
+
+#### R10,R1,R4
+
+![xor new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/de75a1ff-0dac-49ad-8e01-ff1b7d33d032)
+
+#### ADDI R12,R4,5
+
+![addi new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/bb02272e-d8b1-485f-a45a-cdd92cf15a81)
+
+#### BEQ R0,R0,15
+
+![beq new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/56c67770-6ef6-40d0-8d11-c63e160d7443)
 
    
