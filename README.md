@@ -413,6 +413,6 @@ To perform Functional simulation:<br>
 
 9. click on "+" button at your file name on the top then you will get list of signals.<br>
 
-    ![task 1 pic 1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/877e2487-709f-44f0-a514-fab9147c56b9)
+    
 
 10. as shown in fig 
