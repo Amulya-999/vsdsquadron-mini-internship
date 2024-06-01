@@ -398,12 +398,14 @@ opcode = 0110011<br>
 The verilog code and testbench of RISC-V is already designed which is taken from the reference github repo provided.<br>
 
 To perform Functional simulation:<br>
-1. create a new directory with any name using the command "mkdir <name>" like mkdir amulya.<br>
-2. create two files amulya_v.v and amulya_tb.v using the command "touch amulya_v.v amulya_tb.v".so,two files are created in directory.<br>
-3. copy and paste the verilog code in amulya_v.v file and testbench in amulya_tb.v file from reference repo.<br>
-4. now,make sure that you are on right directory (cd amulya) and to run and simulate the code use the command.<br>
+1. create a new directory with any name using the command "mkdir < name > " like<br>
+2. mkdir amulya.<br>
+3. create two files   amulya_v.v  and   amulya_tb.v using the command<br>
+4. "touch amulya_v.v amulya_tb.v".  so,two files are created in directory.<br>
+5. copy and paste the verilog code in amulya_v.v file and testbench in amulya_tb.v file from reference repo.<br>
+6. now,make sure that you are on right directory (cd amulya) and to run and simulate the code use the command.<br>
    iverilog -o amulya amulya_v.v amulya_tb.v<br>
    ./amulya<br>
-5. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"
-6. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"
+7. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"
+8. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"
    
