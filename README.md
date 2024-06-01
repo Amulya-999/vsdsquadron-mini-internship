@@ -409,4 +409,10 @@ To perform Functional simulation:<br>
 7. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"
 8. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"
    
+![task 1 pic 1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/877e2487-709f-44f0-a514-fab9147c56b9)
 
+9. click on "+" button at your file name on the top then you will get list of signals.<br>
+
+    ![task 1 pic 1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/877e2487-709f-44f0-a514-fab9147c56b9)
+
+10. as shown in fig 
