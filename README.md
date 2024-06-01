@@ -429,9 +429,9 @@ Now instead of following RISC-V instructions we follow the Hardcoded ISA pattern
 THE HARDCODED ISA PATTERN FROM REFERENCE REPO IS :<br>
 
 ##### ADD R6, R2, R1	   -	32'h02208300
-##### SUB R7, R1, R2	32'-	32'h02209380
-##### AND R8, R1, R3	32'-	32'h0230a400
-##### OR R9, R2, R5	32' - 	32'h02513480
+##### SUB R7, R1, R2   	-	32'h02209380
+##### AND R8, R1, R3	   -	32'h0230a400
+##### OR R9, R2, R5	    - 	32'h02513480
 ##### XOR R10, R1, R4	  - 	32'h0240c500
 ##### SLT R1, R2, R4	   - 32'h02415580
 ##### ADDI R12, R4, 5 	 - 	32'h00520600
@@ -445,4 +445,19 @@ THE HARDCODED ISA PATTERN FROM REFERENCE REPO IS :<br>
 
 #### ADD R6,R2,R1
 
+![add new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/d5486e80-8782-46e1-84b1-dc824f1d77d5)
 
+here in the signals to get the waveform of instruction ADD R6,R2,R1;
+1. clk: Represents the clock signal.
+2. EX_MEM_IR[31:0]: Holds the instruction being executed in the EX stage of the pipeline.
+3. ID_EX_A[31:0]: Contains the value of register r1.
+4. ID_EX_B[31:0]: Contains the value of register r2.
+5. EX_MEM_ALUOUT[31:0]: Represents the result of the ALU operation in the EX stage.
+
+EX stage is  where the arithmetic or logic operations specified by the instruction are actually performed.
+similarly for other arithmetic and logical instructions also.
+
+#### SUB R7,R1,R2
+
+
+   
