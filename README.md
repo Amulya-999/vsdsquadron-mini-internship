@@ -399,26 +399,26 @@ The verilog code and testbench of RISC-V is already designed which is taken from
 
 To perform Functional simulation:<br>
 1. create a new directory with any name using the command "mkdir < name > " like<br>
-2. mkdir amulya.<br>
+         mkdir amulya.<br>
 
 3. create two files   amulya_v.v  and   amulya_tb.v using the command<br>
 
-4. "touch amulya_v.v amulya_tb.v".  so,two files are created in directory.<br>
+     "touch amulya_v.v amulya_tb.v".  so,two files are created in directory.<br>
 
-5. copy and paste the verilog code in amulya_v.v file and testbench in amulya_tb.v file from reference repo.<br>
+4.  copy and paste the verilog code in amulya_v.v file and testbench in amulya_tb.v file from reference repo.<br>
 
-6. now,make sure that you are on right directory (cd amulya) and to run and simulate the code use the command.<br>
+5. now,make sure that you are on right directory (cd amulya) and to run and simulate the code use the command.<br>
 
    iverilog -o amulya amulya_v.v amulya_tb.v<br>
    ./amulya<br>
    
-7. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"<br>
+6. to see the waveforms install gtkwave by using command "sudo apt install gtkwave"<br>
 
-8. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"<br>
+7. now to see the waveforms use the command "gtkwave iiitb_rv32i.vcd"<br>
    
 ![task 1 pic 1](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/877e2487-709f-44f0-a514-fab9147c56b9)
 
-9. click on "+" button at your file name on the top then you will get list of signals.<br>
+8. click on "+" button at your file name on the top then you will get list of signals.<br>
 
     ![task 2](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/6cd3dfbb-46b0-4316-92d5-72eeae3ad3cb)
 
@@ -450,7 +450,7 @@ THE HARDCODED ISA PATTERN FROM REFERENCE REPO IS :<br>
 
 ### observation of various waveforms for the instructions 
 
-#### ADD R6,R2,R1
+#### 1. ADD R6,R2,R1
 
 ![add new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/d5486e80-8782-46e1-84b1-dc824f1d77d5)
 
@@ -471,31 +471,31 @@ EX stage is  where the arithmetic or logic operations specified by the instructi
 
 similarly for other arithmetic and logical instructions also.<br>
 
-#### SUB R7,R1,R2
+#### 2. SUB R7,R1,R2
 
 ![sub new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/4bf8c586-d8d6-4837-9de4-089fb3f11b78)
 
-#### AND R8,R1,R3
+#### 3. AND R8,R1,R3
 
 ![and new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/9ae2d285-eb26-4b08-8d88-e90a1294b36b)
 
-#### OR R9,R2,R5 
+#### 4. OR R9,R2,R5 
 
 ![or new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/f160a374-d792-4861-90f5-bb4b527092e0)
 
-#### SLT R1,R2,R4
+#### 5. SLT R1,R2,R4
 
 ![slt new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/7e7eb0bf-c4c2-488a-a7b6-8a27f02ecdaf)
 
-#### R10,R1,R4
+#### 6. XOR 10,R1,R4
 
 ![xor new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/de75a1ff-0dac-49ad-8e01-ff1b7d33d032)
 
-#### ADDI R12,R4,5
+#### 7. ADDI R12,R4,5
 
 ![addi new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/bb02272e-d8b1-485f-a45a-cdd92cf15a81)
 
-#### BEQ R0,R0,15
+#### 8. BEQ R0,R0,15
 
 ![beq new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/56c67770-6ef6-40d0-8d11-c63e160d7443)
 
