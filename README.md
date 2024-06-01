@@ -413,6 +413,36 @@ To perform Functional simulation:<br>
 
 9. click on "+" button at your file name on the top then you will get list of signals.<br>
 
-    
+    ![task 2](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/6cd3dfbb-46b0-4316-92d5-72eeae3ad3cb)
 
-10. as shown in fig 
+
+10. as shown in fig , all the instructions in verilog code is hardcoded.
+
+
+#### what is hardcoded ISA ?
+
+1. A Hardcoded ISA is an ISA where the instructions and their execution logic are directly implemented in the hardware circuitary of a processor.<br>
+2. Hardcoded ISA offers advantages in terms of speed and efficiency.<br>
+
+Now instead of following RISC-V instructions we follow the Hardcoded ISA pattern.<br>
+
+THE HARDCODED ISA PATTERN FROM REFERENCE REPO IS :<br>
+
+##### ADD R6, R2, R1	   -	32'h02208300
+##### SUB R7, R1, R2	32'-	32'h02209380
+##### AND R8, R1, R3	32'-	32'h0230a400
+##### OR R9, R2, R5	32' - 	32'h02513480
+##### XOR R10, R1, R4	  - 	32'h0240c500
+##### SLT R1, R2, R4	   - 32'h02415580
+##### ADDI R12, R4, 5 	 - 	32'h00520600
+##### BEQ R0, R0, 15	   - 32'h00f00002
+##### SW R3, R1, 2	     - 	32'h00209181
+##### LW R13, R1, 2    	- 32'h00208681
+##### SRL R16, R14, R2 	- 32'h00271803
+##### SLL R15, R1, R2	  - 32'h00208783
+
+### observation of various waveforms for the instructions 
+
+#### ADD R6,R2,R1
+
+
