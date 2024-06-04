@@ -531,6 +531,6 @@ When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br
 
 #### HARDWARE CONNECTIONS
 
-Input: Six inputs of single bit are connected to the GPIO pins of VSDSquadron Mini to push buttons placed on the breadboard.
-Outputs: One LED is connected to display the output from the GPIO pins of mini board.
+##### input : Six inputs of single bit are connected to the GPIO pins of VSDSquadron Mini to push buttons placed on the breadboard.
+##### output : One LED is connected to display the output on breadboard from the GPIO pins of mini board.
 
