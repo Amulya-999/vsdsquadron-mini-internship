@@ -539,7 +539,7 @@ When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br
 ![Screenshot (256)](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/3defb23e-6723-4463-89ba-5786baa67743)
 
 
-#### Truth table for to verify 4:1 mux :
+#### Truth table to verify 4:1 mux :
 
 | S1 | S0 |  Y  |
 |----|----|-----|
