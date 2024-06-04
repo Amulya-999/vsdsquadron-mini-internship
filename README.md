@@ -520,7 +520,7 @@ When the control signal (S0,S1) is 0,1 the output (Y) is the second input D1.<br
 When the control signal (S0,S1) is 1,0 the output (Y) is the second input D2.<br>
 When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br>
 
-#### COMPONENTS REQUIRED
+#### COMPONENTS REQUIRED :
 
 1. VSDsquadron mini board
 2. push buttons - 6 for giving input data
@@ -529,17 +529,17 @@ When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br
 5. jumper wires
 6. VS code for software development
 
-#### HARDWARE CONNECTIONS
+#### HARDWARE CONNECTIONS :
 
 ##### input : Six inputs of single bit are connected to the GPIO pins of VSDSquadron Mini to push buttons placed on the breadboard.
 ##### output : One LED is connected to display the output on breadboard from the GPIO pins of mini board.
 
-#### CIRCUIT CONNECTIONS
+#### CIRCUIT CONNECTIONS :
 
 ![Screenshot (256)](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/3defb23e-6723-4463-89ba-5786baa67743)
 
 
-#### Truth table for to verify 4:1 mux
+#### Truth table for to verify 4:1 mux :
 
 | S1 | S0 |  Y  |
 |----|----|-----|
