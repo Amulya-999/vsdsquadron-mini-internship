@@ -500,3 +500,37 @@ similarly for other arithmetic and logical instructions also.<br>
 ![beq new](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/56c67770-6ef6-40d0-8d11-c63e160d7443)
 
    
+## TASK - 4
+
+### TASK IS TO IMPLEMENT ANY DIGITAL CIRCUIT USING RISC-V VSDSQUADRON MINI BOARD
+
+#### IMPLEMENTING 2:1 MULTIPLEXER USING RISC-V VSDSQUADRON MINI BOARD.
+
+#### OVERVIEW
+
+This project involves implementing 4:1 multiplexer using RISC-V VSDsquadron mini board.A 4:1 multiplexer (MUX) is a digital switch that selects one of four input signals and forwards the selected input to a single output line. It operates based on the values of two selection (or control) lines. A 4:1 multiplexer (MUX) has various applications in digital electronics due to its ability to select and route one of several input signals to a single output line.It is a versatile digital component used in various applications to streamline and simplify signal selection and routing tasks in electronic systems..This project will demonstrate the practical application of digital logic design using a RISC-V based development platform. <br>
+
+#### What is a 4:1 Multiplexer?
+A 4:1 multiplexer is a digital switch that allows one of four input signals to pass through to the output based on two control signals. The selection mechanism is simple:<br>
+
+let the four inputs be D0,D1,D2,D3 and two control signals be S0,S1 then<br>
+
+When the control signal (S0,S1) is 0,0  the output (Y) is the first input D0 .<br>
+When the control signal (S0,S1) is 0,1 the output (Y) is the second input D1.<br>
+When the control signal (S0,S1) is 1,0 the output (Y) is the second input D2.<br>
+When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br>
+
+#### COMPONENTS REQUIRED
+
+1. VSDsquadron mini board
+2. push buttons - 6 for giving input data
+3. LED's - 1 for displaying output
+4. Breadboard
+5. jumper wires
+6. VS code for software development
+
+#### HARDWARE CONNECTIONS
+
+Input: Six inputs of single bit are connected to the GPIO pins of VSDSquadron Mini to push buttons placed on the breadboard.
+Outputs: One LED is connected to display the output from the GPIO pins of mini board.
+
