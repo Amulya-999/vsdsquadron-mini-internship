@@ -627,5 +627,7 @@ int main() {
 }
 
 #### APPLICATION VIDEO
-Uploading Application_Video (2).mp4…
+
+https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/c8f9e924-ab06-428b-b7c2-fbc76c2e922c
+
 
