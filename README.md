@@ -595,9 +595,8 @@ int main() {<br>
     SystemCoreClockUpdate();<br>
     Delay_Init();<br>
     GPIO_Config();<br>
-
     while(1) {
-        s0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1); // Selection line 1
+         s0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1); // Selection line 1
         s1 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_2); // Selection line 2
         in0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_3); // Input 0
         in1 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_4); // Input 1
