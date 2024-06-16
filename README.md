@@ -550,30 +550,30 @@ When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br
 
 #### CODE FOR IMPLEMENTATION
 
-#include <stdio.h>
-#include <debug.h>
-#include <ch32v00x.h>
+#include <stdio.h><br>
+#include <debug.h><br>
+#include <ch32v00x.h><br>
 
-// Defining the Logic Gate Function
-int and(int bit1, int bit2) {
-    int out = bit1 & bit2;
-    return out;
-}
+// Defining the Logic Gate Function<br.
+int and(int bit1, int bit2) {<br>
+    int out = bit1 & bit2;<br>
+    return out;<br>
+}<br>
 
-int or(int bit1, int bit2) {
-    int out = bit1 | bit2; // Changed to bitwise OR
-    return out;
-}
+int or(int bit1, int bit2) {<br>
+    int out = bit1 | bit2; // Changed to bitwise OR<br>
+    return out;<br>
+}<br>
 
-int not(int bit1) {
-    int out = ~bit1 & 0x01;
-    return out;
-}
+int not(int bit1) {<br>
+    int out = ~bit1 & 0x01;<br>
+    return out;<br>
+}<br>
 
-void GPIO_Config(void) {
-    GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
+void GPIO_Config(void) {<br>
+    GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration<br>
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D<br>
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C<br>
 
     // Input Pins Configuration
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6;
@@ -587,14 +587,14 @@ void GPIO_Config(void) {
     GPIO_Init(GPIOC, &GPIO_InitStructure);
 }
 
-// The MAIN function responsible for the execution of program
-int main() {
-    uint8_t s0, s1, in0, in1, in2, in3; // Declared the required variables
-    uint8_t x, y, a1, a, b1, b, c1, c, d1, d, e1, e2, e;
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-    SystemCoreClockUpdate();
-    Delay_Init();
-    GPIO_Config();
+// The MAIN function responsible for the execution of program<br>
+int main() {<br>
+    uint8_t s0, s1, in0, in1, in2, in3; // Declared the required variables<br>
+    uint8_t x, y, a1, a, b1, b, c1, c, d1, d, e1, e2, e;<br>
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);<br>
+    SystemCoreClockUpdate();<br>
+    Delay_Init();<br>
+    GPIO_Config();<br>
 
     while(1) {
         s0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1); // Selection line 1
