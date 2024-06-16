@@ -539,7 +539,7 @@ When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br
 ![Screenshot (256)](https://github.com/Amulya-999/vsdsquadron-mini-internship/assets/170462957/3defb23e-6723-4463-89ba-5786baa67743)
 
 
-#### Truth table to verify 4:1 mux :
+#### TRUTH TABLE TO VERIFY 4:1 MUX :
 
 | S1 | S0 |  Y  |
 |----|----|-----|
@@ -548,3 +548,82 @@ When the control signal (S0,S1) is 1,1 the output (Y) is the second input D3.<br
 |  1 |  0 | D2  |
 |  1 |  1 | D3  |
 
+#### CODE FOR IMPLEMENTATION
+
+#include <stdio.h>
+#include <debug.h>
+#include <ch32v00x.h>
+
+// Defining the Logic Gate Function
+int and(int bit1, int bit2) {
+    int out = bit1 & bit2;
+    return out;
+}
+
+int or(int bit1, int bit2) {
+    int out = bit1 | bit2; // Changed to bitwise OR
+    return out;
+}
+
+int not(int bit1) {
+    int out = ~bit1 & 0x01;
+    return out;
+}
+
+void GPIO_Config(void) {
+    GPIO_InitTypeDef GPIO_InitStructure = {0}; // structure variable used for GPIO configuration
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE); // to enable the clock for port D
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE); // to enable the clock for port C
+
+    // Input Pins Configuration
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; // Defined as Input Type with Pull-Up
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    // Output Pin Configuration
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; // Defined Output Type
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; // Defined Speed
+    GPIO_Init(GPIOC, &GPIO_InitStructure);
+}
+
+// The MAIN function responsible for the execution of program
+int main() {
+    uint8_t s0, s1, in0, in1, in2, in3; // Declared the required variables
+    uint8_t x, y, a1, a, b1, b, c1, c, d1, d, e1, e2, e;
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+    SystemCoreClockUpdate();
+    Delay_Init();
+    GPIO_Config();
+
+    while(1) {
+        s0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_1); // Selection line 1
+        s1 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_2); // Selection line 2
+        in0 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_3); // Input 0
+        in1 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_4); // Input 1
+        in2 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_5); // Input 2
+        in3 = GPIO_ReadInputDataBit(GPIOD, GPIO_Pin_6); // Input 3
+        
+        x = not(s0);
+        y = not(s1);
+        a1 = and(x, y);
+        a = and(a1, in0);
+        b1 = and(x, s1);
+        b = and(b1, in1);
+        c1 = and(s0, y);
+        c = and(c1, in2);
+        d1 = and(s0, s1);
+        d = and(d1, in3);
+        e1 = or(a, b);
+        e2 = or(c, d);
+        e = or(e1, e2);
+
+        if (e == 1) { // Changed condition to check if e is 1
+            GPIO_WriteBit(GPIOC, GPIO_Pin_5, SET); // Set pin high if e is 1
+        } else {
+            GPIO_WriteBit(GPIOC, GPIO_Pin_5, RESET); // Set pin low if e is 0
+        }
+    }
+}
+
+#### APPLICATION VIDEO
